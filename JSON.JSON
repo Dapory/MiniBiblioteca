@@ -1,0 +1,11 @@
+{
+    "personas": {
+      "usuario123": {
+        "nombre": "Juan Pérez",
+        "foto": "https://firebasestorage.googleapis.com/v0/b/tu-app-id.appspot.com/o/fotos%2Ffoto1.jpg?alt=media",
+        "tiempo": 0,
+        "estudiando": false
+      }
+    }
+  }
+  

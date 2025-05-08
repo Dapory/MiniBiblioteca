@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca en Vivo - Registro</title>
+  <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+  <div class="entrada">
+    <h1>Bienvenid@ a mi MiniBiblioteca</h1>
+    <form id="formulario" onsubmit="guardarDatos(event)">
+      <label for="nombre">Tu nombre:</label>
+      <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+      <label for="foto">Elige tu foto:</label>
+      <input type="file" id="foto" accept="image/*" required>
+
+      <button type="submit">Unirme</button>
+    </form>
+  </div>
+
+  <script>
+    function guardarDatos(event) {
+      event.preventDefault(); // Prevenir el envío del formulario y recarga de la página
+
+      const nombre = document.getElementById("nombre").value;
+      const fotoInput = document.getElementById("foto");
+      const foto = fotoInput.files[0] ? URL.createObjectURL(fotoInput.files[0]) : null;
+
+      if (nombre && foto) {
+        localStorage.setItem("nombre", nombre);
+        localStorage.setItem("foto", foto);
+        window.location.href = "app.html"; // Redirigir a la página de la biblioteca
+      } else {
+        alert("Por favor, ingresa tu nombre y selecciona una foto.");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
